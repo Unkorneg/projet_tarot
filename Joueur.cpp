@@ -1,6 +1,6 @@
 #include "Joueur.hpp"
 
-Joueur(String name){
+Joueur(string name){
 	nom = name;
 	main = new vector<Cartes>();
 	decision = NULL;
@@ -33,7 +33,7 @@ void setDecision(int choix) {
 	
 }
 
-String getDecision(){
+string getDecision(){
 	return decision;
 }
 

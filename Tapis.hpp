@@ -16,7 +16,10 @@ private:
 	
 public:
 	
-	
+	Tapis();
+	void recevoirCarte(Carte recu);
+	vector<Carte> distribuerGain(Equipe gagnant);
+	vector<Carte> distribuerChien(Joueur joue);
 };
 	
 

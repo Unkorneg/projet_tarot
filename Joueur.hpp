@@ -11,16 +11,16 @@ class Joueur {
 	
 private:
 	
-	String nom;
+	string nom;
 	vector<Carte> main; // Vecteur de cartes, triées et numérotées
-	String decision; // 0 passe, 1 prend, 2 garde, 3 garde_contre, 4 garde_sans
+	string decision; // 0 passe, 1 prend, 2 garde, 3 garde_contre, 4 garde_sans
 	int points; // points du joueur
 	
 public:
 	
-	Joueur(String name);
+	Joueur(string name);
 	void setDecision(int choix);
-	String getDecision();
+	string getDecision();
 	vector<Carte> getMain();
 	int getPoints();
 	void ajouterCarte(Carte nvlCarte);
