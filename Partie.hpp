@@ -18,6 +18,7 @@ public:
 	void setEquipe(Joueur seul);
 	void distribuerCartes();
 	void ramasserCartes();
+	void lancerPartie();
 };
 
 #endif
