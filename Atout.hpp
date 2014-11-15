@@ -1,15 +1,19 @@
 #ifndef ATOUT_HPP
 #define ATOUT_HPP
 
+#include <string>
+
+using namespace std;
+
 class Atout : public Carte
 {
-    public:
-	int getHauteur();
-	int getValeur();
-	void setHauteur(int);
-	void setValeur(int);
-	void toString();
+public:
+	Atout(string val, double pts, int rg); // Constructeur
+	~Atout(); // Destructeur
+	bool estBout();
 
+private:
+	bool bout;
 };
 
 #endif

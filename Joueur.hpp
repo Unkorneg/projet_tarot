@@ -1,7 +1,7 @@
 #ifndef JOUEUR_HPP
 #define JOUEUR_HPP
 
-#include <vector>
+#include <set>
 #include <iostream>
 #include <string>
 
@@ -12,21 +12,27 @@ class Joueur {
 private:
 	
 	string nom;
-	vector<Carte> main; // Vecteur de cartes, triées et numérotées
-	string decision; // 0 passe, 1 prend, 2 garde, 3 garde_contre, 4 garde_sans
+	set<Carte> jeu; // Set de cartes, triées et numérotées
+	set<Cartes>::iterator it;
+	int decision; // 0 passe, 1 prend, 2 garde, 3 garde_sans, 4 garde_contre
+	Equipe equipe;
 	int points; // points du joueur
 	
 public:
 	
 	Joueur(string name);
 	void setDecision(int choix);
-	string getDecision();
-	vector<Carte> getMain();
+	int getDecision();
+	Equipe getEquipe();
+	void setEquipe(Equipe team);
+	set<Carte> getJeu();
+	set<Carte>::iterator getIterator();
 	int getPoints();
 	void ajouterCarte(Carte nvlCarte);
-	Carte lancerCarte(int numero);
-	Carte getCarte(int numero)
+	Carte jouerCarte(int numero); // supprime la carte du jeu
+	Carte getCarte(int numero); // laisse la carte dans le jeu
 	void ajouterPoints();
+	void afficherJeu();
 };
 
 #endif

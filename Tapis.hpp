@@ -11,8 +11,8 @@ class Tapis {
 	
 private:
 	
-	vector<Carte> jeu;
-	Carte* gagnante;
+	String demande; // (Carreau, Trèfle, Coeur, Pique, Atout)
+	;
 	
 public:
 	

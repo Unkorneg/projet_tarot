@@ -1,17 +1,19 @@
 #ifndef COULEUR_HPP
 #define COULEUR_HPP
 
+#include <string>
+
+using namespace std;
+
 class Couleur : public Carte
 {
-    public:
-	int getHauteur();
-	int getCouleur();
-	string getValeur();
-	void setHauteur(int haut);
-	void setValeur(int val);
-	void setCouleur(string coul);
-
-	private:
+public:
+	Couleur(string val, double pts, int rg, string col);
+	~Couleur();
+	string getCouleur();
+	void setCouleur();
+	
+private:
 	string couleur;
 };
 
