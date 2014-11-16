@@ -1,5 +1,5 @@
 # Project name
-EXEC=ghost
+EXEC=Tarot
 
 # Compiler
 IDIR=include include/constraints include/domains include/misc include/objectives include/variables
@@ -10,7 +10,8 @@ CXXFLAGS=-std=c++0x -Ofast -W -Wall -Wextra -pedantic -Wno-sign-compare -Wno-unu
 LFLAGS=$(IDIRFLAG)
 
 # Directories
-SRCDIR=src src/constraints src/domains src/misc src/objectives src/variables
+SRCDIR=src 
+#/constraints src/domains src/misc src/objectives src/variables
 OBJDIR=obj
 BINDIR=bin
 
