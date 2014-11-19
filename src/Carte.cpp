@@ -1,10 +1,14 @@
+#include <iostream>
+
+
 #include "Carte.hpp"
+
  
 Carte::Carte(string val, double pts, int rg) {
 	valeur = val;
 	points = pts;
 	rang = rg;
-	//proprietaire = NULL;
+	//this->proprietaire = NULL;
 }
 
 Carte::~Carte() {
@@ -20,7 +24,7 @@ double Carte::getPoints() {
 int Carte::getRang() {
 	return rang;
 }
-bool Carte::estPlusPetitQue(Carte c) {
+bool Carte::estPlusPetitQue(Carte& c) {
 	return (rang < c.rang);
 }
 void Carte::setValeur(string val) {
@@ -34,4 +38,27 @@ void Carte::setRang(int rg) {
 }
 string Carte::getNom() {
 	return "";
+}
+
+bool operator<(Carte &first, Carte &second) {
+	return (first.getRang() < second.getRang());
+}
+
+int main() {
+	Carte* cc = new Carte("Roi", 2.5, 7);
+	
+	cout << cc->getValeur() << "\n"; // Roi
+	cout << cc->getRang() << "\n";
+	cout << cc->getPoints() << "\n";
+	
+	Carte* c1 = new Carte("Dame", 1.5, 6);
+	
+	cout << c1->estPlusPetitQue(*cc) << '\n';
+	
+	if(*c1<*cc){
+		cout <<"Ok"<<'\n';
+	}
+	
+	
+	return 0;
 }

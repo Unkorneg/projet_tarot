@@ -71,6 +71,6 @@ void Partie::creerEquipes() {
 		cout << preneur.getNom() << " joue contre les autres.\n";
 	}
 	
-	defense.ajouterJoueur
+	defense.ajouterJoueur();
 }
 

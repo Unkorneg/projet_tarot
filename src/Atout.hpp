@@ -2,6 +2,9 @@
 #define ATOUT_HPP
 
 #include <string>
+#include <iostream>
+
+#include "Carte.hpp"
 
 using namespace std;
 
@@ -11,6 +14,7 @@ public:
 	Atout(string val, double pts, int rg); // Constructeur
 	~Atout(); // Destructeur
 	bool estBout();
+	string getNom() override;
 
 private:
 	bool bout;

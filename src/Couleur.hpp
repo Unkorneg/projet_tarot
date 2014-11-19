@@ -12,6 +12,7 @@ public:
 	~Couleur();
 	string getCouleur();
 	void setCouleur();
+	string getNom() override;
 	
 private:
 	string couleur;

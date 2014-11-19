@@ -1,9 +1,6 @@
 #include "Couleur.hpp"
 
-Couleur::Couleur(string val, double pts, int rg, string col) {
-	valeur = val;
-	points = pts;
-	rang = rg;
+Couleur::Couleur(string val, double pts, int rg, string col):Carte(val, pts, rg) {
 	couleur = col
 }
 

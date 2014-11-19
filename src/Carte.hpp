@@ -13,13 +13,13 @@ public:
 	string getValeur();
 	double getPoints();
 	int getRang();
-	bool estPlusPetitQue(Carte c);
+	bool estPlusPetitQue(Carte& c);
 	void setValeur(string val);
 	void setPoints(double pts);
 	void setRang(int rg);
 	//Joueur getProprio();
 	//void setProprio(Joueur prop);
-	string getNom();
+	virtual string getNom();
 	
 protected:
 	string valeur; // valeur de la carte (1 à 21 pour les Atouts, 1 à 10 pour les Couleurs + Valet, Cavalier, Dame, Roi)

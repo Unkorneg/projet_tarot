@@ -1,9 +1,6 @@
 #include "Atout.hpp"
 
-Atout::Atout(string val, double pts, int rg) {
-	valeur = val;
-	points = pts;
-	rang = rg;
+Atout::Atout(string val, double pts, int rg):Carte(val, pts, rg) {
 	if (pts == 4.5)
 		bout = true;
 	else
@@ -20,4 +17,4 @@ bool Atout::estBout() {
 
 string Atout::getNom() {
 	return valeur;
-}
+} 
