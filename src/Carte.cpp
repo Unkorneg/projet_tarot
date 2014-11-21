@@ -76,7 +76,7 @@ int main() {
 	
 	Carte* c1 = new Carte("Dame", "Pique", 1.5, 6);
 	
-	cout << c1->estPlusPetitQue(*cc) << '\n';
+	cout << c1->plusPetit(*cc) << '\n';
 	
 	/*if(*c1<*cc){
 		cout <<"Ok"<<'\n';
