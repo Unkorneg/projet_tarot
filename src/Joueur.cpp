@@ -34,7 +34,7 @@ void Joueur::ajouterCarte(Carte& c) {
 	
 	// insère la carte dans la main de façon à ce que le jeu soit trié
 	it = jeu.end();
-	while (c.estPlusPetitQue(*it) && it != jeu.begin()) {
+	while (c.plusPetit(*it) && it != jeu.begin()) {
 		--it;
 	}
 	jeu.insert(it,c);
@@ -63,6 +63,13 @@ void Joueur::afficherJeu() {
 		cout << i << ". " << it->getNom() << endl;
 		++i;
 	}
+}
+
+void Joueur::compterBouts() {
+	
+}
+void Joueur::afficherPossibilites(string demande) {
+	
 }
 
 

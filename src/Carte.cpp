@@ -25,25 +25,32 @@ Carte::~Carte() {
 string Carte::getValeur() {
 	return valeur;
 }
+
 double Carte::getPoints() {
 	return points;
 }
-int Carte::getRang() const {
+
+int Carte::getRang() {
 	return rang;
 }
-bool Carte::estPlusPetitQue(Carte& c) {
+
+bool Carte::plusPetit(Carte& c) {
 	return (rang < c.rang);
 }
+
 void Carte::setValeur(string val) {
 	valeur = val;
 }
+
 void Carte::setPoints(double pts) {
 	points = pts;
 }
+
 void Carte::setRang(int rg) {
 	rang = rg;
 }
-string Carte::getNom() const {
+
+string Carte::getNom() {
 	return valeur + " de " + couleur;
 }
 

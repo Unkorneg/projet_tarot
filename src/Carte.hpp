@@ -12,14 +12,14 @@ public:
 	~Carte();
 	string getValeur();
 	double getPoints();
-	int getRang() const ;
-	bool estPlusPetitQue(Carte& c);
+	int getRang() ;
+	bool plusPetit(Carte& c);
 	void setValeur(string val);
 	void setPoints(double pts);
 	void setRang(int rg);
 	//Joueur getProprio();
 	//void setProprio(Joueur prop);
-	string getNom() const ;
+	string getNom() ;
 	
 	bool estBout();
 	string getCouleur();
