@@ -11,15 +11,17 @@ class Tapis {
 	
 private:
 	
-	String demande; // (Carreau, Trèfle, Coeur, Pique, Atout)
-	;
+	string demande; // (Carreau, Trèfle, Coeur, Pique, Atout)
+	vector<Carte> tas; // les 4 cartes jouées
 	
 public:
 	
 	Tapis();
-	void recevoirCarte(Carte recu);
-	vector<Carte> distribuerGain(Equipe gagnant);
-	vector<Carte> distribuerChien(Joueur joue);
+	~Tapis();
+	void recevoirCarte(Carte& c);
+	vector<Carte> getTas();
+	void setDemande(string dem);
+	vector<Carte> distribuerChien(Joueur& joue);
 };
 	
 

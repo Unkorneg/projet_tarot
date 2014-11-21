@@ -4,15 +4,22 @@
 #include "Carte.hpp"
 
  
-Carte::Carte(string val, double pts, int rg) {
+Carte::Carte(string val, string coul, double pts, int rg) {
 	valeur = val;
+	couleur = coul;
 	points = pts;
 	rang = rg;
+	if (( coul=="Atout") && ((val=="21") | (val=="1") | (val=="Excuse"))) {
+		bout=true;
+	}
+	else {
+		bout=false;
+	}
 	//this->proprietaire = NULL;
 }
 
 Carte::~Carte() {
-	
+	//
 }
 
 string Carte::getValeur() {
@@ -21,7 +28,7 @@ string Carte::getValeur() {
 double Carte::getPoints() {
 	return points;
 }
-int Carte::getRang() {
+int Carte::getRang() const {
 	return rang;
 }
 bool Carte::estPlusPetitQue(Carte& c) {
@@ -36,29 +43,38 @@ void Carte::setPoints(double pts) {
 void Carte::setRang(int rg) {
 	rang = rg;
 }
-string Carte::getNom() {
-	return "";
+string Carte::getNom() const {
+	return valeur + " de " + couleur;
 }
 
-bool operator<(Carte &first, Carte &second) {
-	return (first.getRang() < second.getRang());
+bool Carte::estBout() {
+	return (bout);
 }
+
+string Carte::getCouleur() {
+	return couleur;
+}
+
+void Carte::setCouleur(string col) {
+	couleur = col;
+}
+
 
 int main() {
-	Carte* cc = new Carte("Roi", 2.5, 7);
+	Carte* cc = new Carte("Roi", "Coeur", 2.5, 7);
 	
-	cout << cc->getValeur() << "\n"; // Roi
+	cout << cc->getNom() << "\n"; // Roi
 	cout << cc->getRang() << "\n";
 	cout << cc->getPoints() << "\n";
 	
-	Carte* c1 = new Carte("Dame", 1.5, 6);
+	Carte* c1 = new Carte("Dame", "Pique", 1.5, 6);
 	
 	cout << c1->estPlusPetitQue(*cc) << '\n';
 	
-	if(*c1<*cc){
+	/*if(*c1<*cc){
 		cout <<"Ok"<<'\n';
 	}
-	
+	*/
 	
 	return 0;
 }

@@ -1,7 +1,7 @@
 #ifndef JOUEUR_HPP
 #define JOUEUR_HPP
 
-#include <set>
+#include <vector>
 #include <iostream>
 #include <string>
 
@@ -9,33 +9,49 @@
 
 using namespace std;
 
+/*
+struct cartecomp {
+  bool operator() (const Carte& une, const Carte& deux) const {
+	  return une.getRang() < deux.getRang();
+  }
+};*/
+
 class Joueur {
 	
 private:
 	
 	string nom;
-	set<Carte> jeu; // Set de cartes, triées et numérotées
-	set<Carte>::iterator it;
+	vector<Carte> jeu; // vector de cartes, triées et numérotées
+	vector<Carte>::iterator it;
 	int decision; // 0 passe, 1 prend, 2 garde, 3 garde_sans, 4 garde_contre
 	//Equipe equipe;
 	int points; // points du joueur
+	//Etat etat; // defenseur ou preneur
+	int nbBout;
 	
 public:
 	
 	Joueur(string name);
+	~Joueur();
 	void setDecision(int choix);
 	int getDecision();
 	//Equipe getEquipe();
 	//void setEquipe(Equipe team);
-	set<Carte> getJeu();
-	set<Carte>::iterator getIterator();
+	vector<Carte> getJeu();
+	vector<Carte>::iterator getIterator();
 	int getPoints();
 	void ajouterCarte(Carte& nvlCarte);
-	Carte* jouerCarte(int numero); // supprime la carte du jeu
-	Carte* getCarte(int numero); // laisse la carte dans le jeu
+	Carte jouerCarte(int numero); // supprime la carte du jeu
+	Carte getCarte(int numero); // laisse la carte dans le jeu
 	void ajouterPoints(int pts);
 	void afficherJeu();
+	
+	void compterBouts();
+	void afficherPossibilites(string demande);
 };
+
+
+
 
 #endif
 

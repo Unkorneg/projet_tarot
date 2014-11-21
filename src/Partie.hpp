@@ -9,19 +9,23 @@ class Partie {
 	
 private:
 	vector<Joueur> participants;// Ne change pas à chaque manche
+	Joueur preneur;
 	Tapis tapis;
-	Equipe defense;
-	Equipe preneur;
 	int nbManches;
 	vector<Carte> paquet;
+	vector<Carte> potDefense;
+	vector<Carte> potPreneur;
 	
 public:
 	Partie();
-	void ajouterJoueur(Joueur nve);
-	void setEquipe(Joueur seul);
+	~Partie();
+	void ajouterJoueur(Joueur& jo);
 	void distribuerCartes();
-	void ramasserCartes();
-	void creerEquipes(); // demande à chaque joueur sa décision, créé les équipes
+	void jouer(int num, string demande); // demande au joueur quelle carte jouer et joue la carte
+	string demandeTapis(); // renvoie la couleur demandée par le tapis
+	void ajouterADefense(vector<Carte> gain);
+	void ajouterAPreneur(vector<Carte> gain);
+	
 	
 };
 

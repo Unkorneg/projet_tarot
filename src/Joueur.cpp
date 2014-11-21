@@ -6,6 +6,10 @@ Joueur::Joueur(string name){
 	points = 0;
 }
 
+Joueur::~Joueur() {
+	jeu.clear();
+}
+
 void Joueur::setDecision(int choix) {
 	decision = choix;
 }
@@ -14,11 +18,11 @@ int Joueur::getDecision(){
 	return decision;
 }
 
-set<Carte> Joueur::getJeu() {
+vector<Carte> Joueur::getJeu() {
 	return jeu;
 }
 
-set<Carte>::iterator Joueur::getIterator() {
+vector<Carte>::iterator Joueur::getIterator() {
 	return it;
 }
 
@@ -26,30 +30,27 @@ int Joueur::getPoints() {
 	return points;
 }
 
-void Joueur::ajouterCarte(Carte& nvlCarte) {
+void Joueur::ajouterCarte(Carte& c) {
 	
 	// insère la carte dans la main de façon à ce que le jeu soit trié
-	jeu.insert(nvlCarte);
+	it = jeu.end();
+	while (c.estPlusPetitQue(*it) && it != jeu.begin()) {
+		--it;
+	}
+	jeu.insert(it,c);
 	
 }
 
-Carte* Joueur::jouerCarte(int numero) {
-	it = jeu.begin();
-	for(int i=1; i<numero; ++i) {
-		++it;
-	}
-	Carte rep = *it;
-	jeu.erase(it);
-	return &rep;
+Carte Joueur::jouerCarte(int num) {
+	
+	Carte rep = jeu[num];
+	jeu.erase(jeu.begin()+num);
+	return rep;
 }
 
-Carte* Joueur::getCarte(int numero) {
-	it = jeu.begin();
-	for(int i=1; i<numero; ++i) {
-		++it;
-	}
-	Carte rep = *it;
-	return &rep;
+Carte Joueur::getCarte(int num) {
+	
+	return jeu[num];
 }
 
 void Joueur::ajouterPoints(int nbPts) {
@@ -64,21 +65,14 @@ void Joueur::afficherJeu() {
 	}
 }
 
-/*Equipe Joueur::getEquipe() {
-	return equipe;
-}
-
-void Joueur::setEquipe(Equipe e) {
-	equipe = e;
-}*/
 
 int main() {
 	Joueur* j1 = new Joueur("David");
 	
-	Carte* c1 = new Carte("Valet", 1, 1);
-	Carte* c2 = new Carte("Dame", 1, 2);
-	Carte* c3 = new Carte("Roi", 1, 3);
-	Carte* c4 = new Carte("As", 1, 4);
+	Carte* c1 = new Carte("Valet", "Coeur", 1, 1);
+	Carte* c2 = new Carte("Dame", "Coeur", 1, 2);
+	Carte* c3 = new Carte("Roi", "Coeur", 1, 3);
+	Carte* c4 = new Carte("As", "Coeur", 1, 4);
 	
 	j1->afficherJeu();
 	
