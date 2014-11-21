@@ -3,12 +3,21 @@
 Tapis() {
 	
 }
+
 ~Tapis() {
 	
 }
+
 void recevoirCarte(Carte& c) {
-	tas.push_back(c)
+	if ()
+	tas.push_back(c);
 }
-vector<Carte> getTas();
-void setDemande(string dem);
+
+vector<Carte> getTas() {
+	return tas;
+}
+
+void setDemande(string dem) {
+	demande = 
+}
 vector<Carte> distribuerChien(Joueur& joue);
