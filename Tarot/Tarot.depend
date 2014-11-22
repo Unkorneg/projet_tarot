@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1416657280 source:/Users/davidkerbrat/Documents/L3_Info/ObjetDevApplications/ProjetTarot/projet_tarot/src/Carte.cpp
+	<iostream>
+	"Carte.hpp"
+
+1416657280 /Users/davidkerbrat/Documents/L3_Info/ObjetDevApplications/ProjetTarot/projet_tarot/src/Carte.hpp
+	<string>
+
