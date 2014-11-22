@@ -20,11 +20,11 @@ public:
 	//Joueur getProprio();
 	//void setProprio(Joueur prop);
 	string getNom() ;
-	
+
 	bool estBout();
 	string getCouleur();
 	void setCouleur(string col);
-	
+
 private:
 	string valeur; // valeur de la carte (1 à 21 pour les Atouts, 1 à 10 pour les Couleurs + Valet, Cavalier, Dame, Roi)
 	string couleur; // Atout, Trèfle, Carreau, Coeur, Pique
@@ -32,7 +32,7 @@ private:
 	int rang; // rang pour le tri
 	bool bout; // true si la carte est un bout
 	//Joueur proprietaire; // joueur proprietaire de la carte
-	 
+
 };
 /*
 bool operator<(Carte const &first, Carte const &second) {

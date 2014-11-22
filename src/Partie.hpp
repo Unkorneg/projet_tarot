@@ -3,10 +3,14 @@
 
 #include <vector>
 
+#include "Joueur.hpp"
+#include "Carte.hpp"
+#include "Tapis.hpp"
+
 using namespace std;
 
 class Partie {
-	
+
 private:
 	vector<Joueur> participants;// Ne change pas à chaque manche
 	Joueur preneur;
@@ -15,7 +19,7 @@ private:
 	vector<Carte> paquet;
 	vector<Carte> potDefense;
 	vector<Carte> potPreneur;
-	
+
 public:
 	Partie();
 	~Partie();
@@ -25,10 +29,8 @@ public:
 	string demandeTapis(); // renvoie la couleur demandée par le tapis
 	void ajouterADefense(vector<Carte> gain);
 	void ajouterAPreneur(vector<Carte> gain);
-	
-	
-};
 
-#include "Partie.cpp"
+
+};
 
 #endif

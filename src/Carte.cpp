@@ -3,7 +3,7 @@
 
 #include "Carte.hpp"
 
- 
+
 Carte::Carte(string val, string coul, double pts, int rg) {
 	valeur = val;
 	couleur = coul;
@@ -66,22 +66,17 @@ void Carte::setCouleur(string col) {
 	couleur = col;
 }
 
-
+/*
 int main() {
 	Carte* cc = new Carte("Roi", "Coeur", 2.5, 7);
-	
+
 	cout << cc->getNom() << "\n"; // Roi
 	cout << cc->getRang() << "\n";
 	cout << cc->getPoints() << "\n";
-	
+
 	Carte* c1 = new Carte("Dame", "Pique", 1.5, 6);
-	
+
 	cout << c1->plusPetit(*cc) << '\n';
-	
-	/*if(*c1<*cc){
-		cout <<"Ok"<<'\n';
-	}
-	*/
-	
+
 	return 0;
-}
+}*/

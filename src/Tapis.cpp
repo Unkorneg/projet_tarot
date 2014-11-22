@@ -1,23 +1,24 @@
 #include "Tapis.hpp"
 
-Tapis() {
-	
+Tapis::Tapis() {
+
 }
 
-~Tapis() {
-	
+Tapis::~Tapis() {
+
 }
 
-void recevoirCarte(Carte& c) {
-	if ()
+void Tapis::recevoirCarte(Carte& c) {
+
 	tas.push_back(c);
 }
 
-vector<Carte> getTas() {
+vector<Carte> Tapis::getTas() {
 	return tas;
 }
 
-void setDemande(string dem) {
-	demande = 
+void Tapis::setDemande(string dem) {
+	demande = dem;
 }
-vector<Carte> distribuerChien(Joueur& joue);
+vector<Carte> Tapis::distribuerChien(Joueur& joue) {
+}

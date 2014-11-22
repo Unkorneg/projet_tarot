@@ -17,9 +17,9 @@ struct cartecomp {
 };*/
 
 class Joueur {
-	
+
 private:
-	
+
 	string nom;
 	vector<Carte> jeu; // vector de cartes, triées et numérotées
 	vector<Carte>::iterator it;
@@ -28,24 +28,23 @@ private:
 	int points; // points du joueur
 	//Etat etat; // defenseur ou preneur
 	int nbBout;
-	
+
 public:
-	
+
+    Joueur();
 	Joueur(string name);
 	~Joueur();
 	void setDecision(int choix);
 	int getDecision();
-	//Equipe getEquipe();
-	//void setEquipe(Equipe team);
 	vector<Carte> getJeu();
 	vector<Carte>::iterator getIterator();
 	int getPoints();
-	void ajouterCarte(Carte& nvlCarte);
+	void ajouterCarte(Carte c);
 	Carte jouerCarte(int numero); // supprime la carte du jeu
 	Carte getCarte(int numero); // laisse la carte dans le jeu
 	void ajouterPoints(int pts);
 	void afficherJeu();
-	
+
 	void compterBouts();
 	void afficherPossibilites(string demande);
 };
