@@ -3,8 +3,11 @@
 
 #include <string>
 
+#include "Joueur.hpp"
+
 using namespace std;
 
+class Joueur;
 class Carte
 {
 public:
@@ -17,8 +20,8 @@ public:
 	void setValeur(string val);
 	void setPoints(double pts);
 	void setRang(int rg);
-	//Joueur getProprio();
-	//void setProprio(Joueur prop);
+	Joueur* getProprio();
+	void setProprio(Joueur prop);
 	string getNom() ;
 
 	bool estBout();
@@ -31,7 +34,7 @@ private:
 	double points; // points de la carte
 	int rang; // rang pour le tri
 	bool bout; // true si la carte est un bout
-	//Joueur proprietaire; // joueur proprietaire de la carte
+	Joueur* proprietaire; // joueur proprietaire de la carte
 
 };
 /*

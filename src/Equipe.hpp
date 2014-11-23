@@ -1,8 +1,0 @@
-
-
-class Equipe {
-public:
-	
-private:
-	
-}

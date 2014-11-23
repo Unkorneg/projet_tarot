@@ -55,24 +55,51 @@ void Partie::ajouterJoueur(Joueur& j) {
 	participants.push_back(j);
 }
 
-/*
-void Partie::creerEquipes() {
-	Joueur preneur = participants[0];
-	for(Joueur j : participants) {
-		int dec;
-		cout << "Décision de " + j.getNom() + " ?" << "\n";
-		cout << "0. Je passe\n" << "1. Je prend\n" << "2. Je garde\n" << "3. Je garde sans\n" << "4. Je garde contre\n";
-		cin >> dec;
-		j.setDecision(dec);
-		if (dec>preneur.getDecision())
-			preneur = j;
-	}
-	if (preneur.getDecision == 0)
-		finDeManche();
-	else {
-		cout << preneur.getNom() << " joue contre les autres.\n";
-	}
+void Partie::donnerChien() {
+	cout << "Le chien contient : " << endl;
+	tapis.afficherChien();
+	tapis.donnerChien(*preneur);
+	system("cls");
+}
 
-	defense.ajouterJoueur();
-}*/
+void Partie::constituerChien() {
+	int num;
+	for(int i=0;i<6;++i) {
+		preneur.afficherJeu();
+		cout << "Quelle carte souhaitez-vous mettre dans le chien ? (Reste "<< 6-i << " cartes.") << endl;
+		cin >> num;
+		tapis.ajouterChien(preneur.jouerCarte(num));
+		system("cls");
+	}
+}
+
+void Partie::jouer(int num) {
+	string demande = tapis.getDemande();
+	Carte* c;
+	participants[num].afficherPossibilites(demande);
+	int choix;
+	cout << "Quelle carte voulez-vous jouer ? (Indiquez son numéro) : ";
+	cin >> choix;
+	cout << endl;
+	c = &(participants[num].jouerCarte(choix));
+	tapis.recoisCarte(*c);
+	system("cls");
+	cout << "Vous avez joué " << c->getNom() << endl;
+	string tmp;
+	cin >> tmp;
+	system("cls");
+}
+
+void ajouterADefense(vector<Carte> gain) {
+	
+}
+void ajouterAPreneur(vector<Carte> gain) {
+	
+}
+void compterPointsDefense() {
+	
+}
+void compterPointsPreneur() {
+	
+}
 

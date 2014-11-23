@@ -78,8 +78,13 @@ void Joueur::afficherJeu() {
 }
 
 void Joueur::compterBouts() {
-
+	int cpt=0;
+	for(it=jeu.begin();it!=jeu.end();++it) {
+		if ((*it).estBout())
+			++cpt;
+	}
 }
+
 void Joueur::afficherPossibilites(string demande) {
     int i=1;
     bool joueCouleur = false;
@@ -91,6 +96,7 @@ void Joueur::afficherPossibilites(string demande) {
         else if(joueCouleur==false && it->getCouleur()=="Atout") {
             cout << i << ". " << it->getNom() << endl;
         }
+		else afficherJeu();
         ++i;
 
 	}

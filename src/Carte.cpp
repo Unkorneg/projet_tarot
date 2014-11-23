@@ -3,7 +3,6 @@
 
 #include "Carte.hpp"
 
-
 Carte::Carte(string val, string coul, double pts, int rg) {
 	valeur = val;
 	couleur = coul;
@@ -15,7 +14,7 @@ Carte::Carte(string val, string coul, double pts, int rg) {
 	else {
 		bout=false;
 	}
-	//this->proprietaire = NULL;
+	proprietaire = NULL;
 }
 
 Carte::~Carte() {
@@ -64,6 +63,14 @@ string Carte::getCouleur() {
 
 void Carte::setCouleur(string col) {
 	couleur = col;
+}
+
+void Carte::setProprio(Joueur jo) {
+	proprietaire = &jo;
+}
+
+Joueur* Carte::getProprio() {
+	return proprietaire;
 }
 
 /*

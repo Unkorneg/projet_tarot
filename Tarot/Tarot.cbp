@@ -32,7 +32,14 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="main.cpp" />
+		<Unit filename="../src/Carte.cpp" />
+		<Unit filename="../src/Carte.hpp" />
+		<Unit filename="../src/Joueur.cpp" />
+		<Unit filename="../src/Joueur.hpp" />
+		<Unit filename="../src/Partie.cpp" />
+		<Unit filename="../src/Partie.hpp" />
+		<Unit filename="../src/Tapis.cpp" />
+		<Unit filename="../src/Tapis.hpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

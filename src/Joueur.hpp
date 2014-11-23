@@ -7,6 +7,8 @@
 
 #include "Carte.hpp"
 
+
+
 using namespace std;
 
 /*
@@ -15,7 +17,7 @@ struct cartecomp {
 	  return une.getRang() < deux.getRang();
   }
 };*/
-
+class Carte;
 class Joueur {
 
 private:
@@ -24,10 +26,10 @@ private:
 	vector<Carte> jeu; // vector de cartes, triées et numérotées
 	vector<Carte>::iterator it;
 	int decision; // 0 passe, 1 prend, 2 garde, 3 garde_sans, 4 garde_contre
-	//Equipe equipe;
 	int points; // points du joueur
 	//Etat etat; // defenseur ou preneur
 	int nbBout;
+	
 
 public:
 

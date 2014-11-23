@@ -1,8 +1,39 @@
 # depslib dependency file v1.0
-1416657280 source:/Users/davidkerbrat/Documents/L3_Info/ObjetDevApplications/ProjetTarot/projet_tarot/src/Carte.cpp
+1416676499 source:/Users/davidkerbrat/Documents/L3_Info/ObjetDevApplications/ProjetTarot/projet_tarot/src/Carte.cpp
 	<iostream>
 	"Carte.hpp"
 
-1416657280 /Users/davidkerbrat/Documents/L3_Info/ObjetDevApplications/ProjetTarot/projet_tarot/src/Carte.hpp
+1416676522 /Users/davidkerbrat/Documents/L3_Info/ObjetDevApplications/ProjetTarot/projet_tarot/src/Carte.hpp
 	<string>
+	"Joueur.hpp"
+
+1416657280 source:/Users/davidkerbrat/Documents/L3_Info/ObjetDevApplications/ProjetTarot/projet_tarot/src/Partie.cpp
+	"Partie.hpp"
+	<ctime>
+	<cstdlib>
+
+1416657280 /Users/davidkerbrat/Documents/L3_Info/ObjetDevApplications/ProjetTarot/projet_tarot/src/Partie.hpp
+	<vector>
+	"Joueur.hpp"
+	"Carte.hpp"
+	"Tapis.hpp"
+
+1416752098 /Users/davidkerbrat/Documents/L3_Info/ObjetDevApplications/ProjetTarot/projet_tarot/src/Joueur.hpp
+	<vector>
+	<iostream>
+	<string>
+	"Carte.hpp"
+
+1416657280 /Users/davidkerbrat/Documents/L3_Info/ObjetDevApplications/ProjetTarot/projet_tarot/src/Tapis.hpp
+	<vector>
+	<iostream>
+	<string>
+	"Carte.hpp"
+	"Joueur.hpp"
+
+1416657280 source:/Users/davidkerbrat/Documents/L3_Info/ObjetDevApplications/ProjetTarot/projet_tarot/src/Tapis.cpp
+	"Tapis.hpp"
+
+1416752096 source:/Users/davidkerbrat/Documents/L3_Info/ObjetDevApplications/ProjetTarot/projet_tarot/src/Joueur.cpp
+	"Joueur.hpp"
 
