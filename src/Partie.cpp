@@ -58,17 +58,23 @@ void Partie::ajouterJoueur(Joueur& j) {
 void Partie::donnerChien() {
 	cout << "Le chien contient : " << endl;
 	tapis.afficherChien();
-	tapis.donnerChien(*preneur);
+	vector<Carte> chien = tapis.donnerChien();
+	vector<Carte>::iterator it;
+	for(it=chien.begin();it!=chien.end();++it) {
+        preneur->ajouterCarte(*it);
+	}
+	string tmp;
+	cin >> tmp;
 	system("cls");
 }
 
 void Partie::constituerChien() {
 	int num;
 	for(int i=0;i<6;++i) {
-		preneur.afficherJeu();
-		cout << "Quelle carte souhaitez-vous mettre dans le chien ? (Reste "<< 6-i << " cartes.") << endl;
+		preneur->afficherJeu();
+		cout << "Quelle carte souhaitez-vous mettre dans le chien ? (Reste "<< 6-i << " cartes." << endl;
 		cin >> num;
-		tapis.ajouterChien(preneur.jouerCarte(num));
+		tapis.ajouterChien(preneur->jouerCarte(num));
 		system("cls");
 	}
 }
@@ -87,19 +93,29 @@ void Partie::jouer(int num) {
 	cout << "Vous avez joué " << c->getNom() << endl;
 	string tmp;
 	cin >> tmp;
+	delete c;
 	system("cls");
 }
 
-void ajouterADefense(vector<Carte> gain) {
-	
+void ajouterADefense() {
+	cout << "La défense gagne le pli" << endl;
+	potDefense.insert(potDefense.begin(), tapis.getTas().begin(), tapis.getTas().end());
+	tapis.viderTas();
+	string tmp;
+	cin >> tmp;
+	delete tmp;
 }
 void ajouterAPreneur(vector<Carte> gain) {
-	
+	cout << "Le preneur gagne le pli" << endl;
+	potPreneur.insert(potPreneur.begin(), tapis.getTas().begin(), tapis.getTas().end());
+	tapis.viderTas();
+	string tmp;
+	cin >> tmp;
 }
 void compterPointsDefense() {
-	
+
 }
 void compterPointsPreneur() {
-	
+
 }
 
