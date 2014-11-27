@@ -34,8 +34,22 @@
 		</Compiler>
 		<Unit filename="../src/Carte.cpp" />
 		<Unit filename="../src/Carte.hpp" />
+		<Unit filename="../src/ComportementPoints.cpp" />
+		<Unit filename="../src/ComportementPoints.hpp" />
+		<Unit filename="../src/Cpt0bout.cpp" />
+		<Unit filename="../src/Cpt0bout.hpp" />
+		<Unit filename="../src/Cpt1bout.cpp" />
+		<Unit filename="../src/Cpt1bout.hpp" />
+		<Unit filename="../src/Cpt2bouts.cpp" />
+		<Unit filename="../src/Cpt2bouts.hpp" />
+		<Unit filename="../src/Cpt3bouts.cpp" />
+		<Unit filename="../src/Cpt3bouts.hpp" />
+		<Unit filename="../src/FacadePartie.cpp" />
+		<Unit filename="../src/FacadePartie.hpp" />
 		<Unit filename="../src/Joueur.cpp" />
 		<Unit filename="../src/Joueur.hpp" />
+		<Unit filename="../src/Observer.cpp" />
+		<Unit filename="../src/Observer.hpp" />
 		<Unit filename="../src/Partie.cpp" />
 		<Unit filename="../src/Partie.hpp" />
 		<Unit filename="../src/Tapis.cpp" />

@@ -7,6 +7,7 @@
 
 using namespace std;
 
+class ComportementPoints;
 class Joueur;
 class Carte
 {
@@ -37,17 +38,6 @@ private:
 	Joueur* proprietaire; // joueur proprietaire de la carte
 
 };
-/*
-bool operator<(Carte const &first, Carte const &second) {
-	return (first.getRang() < second.getRang());
-}
 
-bool operator==(Carte const &first, Carte const &second) {
-	return (first.getRang() == second.getRang());
-}
-
-bool operator>(Carte const &first, Carte const &second) {
-	return (first.getRang() > second.getRang());
-}*/
 
 #endif
