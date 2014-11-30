@@ -9,6 +9,7 @@
 
 using namespace std;
 
+
 class FacadePartie {
 
 private:
@@ -21,6 +22,7 @@ private:
 	vector<Carte*>::iterator it;
 	bool excuseJouee = false;
 	int compteur;
+	int miseMax;
 
 public:
 	FacadePartie();
@@ -33,6 +35,7 @@ public:
 	void jouer(int num); // demande au joueur quelle carte jouer et joue la carte
 	void finDeManche();
 	void compterPoints();
+	void annoncerMise();
 
 
 };

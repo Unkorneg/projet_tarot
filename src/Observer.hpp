@@ -13,7 +13,7 @@ class Observer {
 		string demande;
 		Carte* gagnante;
 	public:
-		virtual void actualiser(string d);
+		virtual void actualiser(string d, Carte* g);
 		virtual void setTapis(Tapis* t);
 };
 

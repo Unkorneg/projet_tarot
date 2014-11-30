@@ -5,22 +5,18 @@
 #include <iostream>
 #include <string>
 
-#include "ComportementPoints.hpp"
+//
+//#include "Observer.hpp"
 #include "Carte.hpp"
-#include "Observer.hpp"
+#include "ComportementPoints.hpp"
 
 using namespace std;
 
-/*
-struct cartecomp {
-  bool operator() (const Carte& une, const Carte& deux) const {
-	  return une.getRang() < deux.getRang();
-  }
-};*/
-class Carte;
+//class Carte;
 class ComportementPoints;
-class Observer;
-class Joueur : public Observer {
+class Tapis;
+//class Observer;
+class Joueur {
 
 private:
 
@@ -31,13 +27,18 @@ private:
 	int mise; // 0 passe, 1 prend, 2 garde, 3 garde_sans, 4 garde_contre
 	double points; // points du joueur
 	ComportementPoints* compPts;
-	string demande; // couleur demandée par le tapis
+
+	Tapis* tapis;
+    string demande;
+    Carte* gagnante;
+
 
 public:
 
     Joueur();
 	Joueur(string name);
 	~Joueur();
+	string getNom();
 	void setMise(int choix);
 	void afficherMisePossible(int miseMax);
 	int getMise();
@@ -56,6 +57,9 @@ public:
 	void compterBouts();
 	void afficherPossibilites();
 	void gagnerPli(vector<Carte*> gain);
+
+	void actualiser(string d, Carte* g);
+    void setTapis(Tapis* t);
 };
 
 

@@ -3,6 +3,8 @@
 
 
 #include "ComportementPoints.hpp"
+#include "Carte.hpp"
+
 
 using namespace std;
 

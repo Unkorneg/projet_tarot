@@ -1,6 +1,6 @@
 #include "Observer.hpp"
 
-void Observer::actualiser(string d) {
+void Observer::actualiser(string d, Carte* g) {
 	demande = d;
 }
 

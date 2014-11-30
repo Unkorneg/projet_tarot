@@ -8,7 +8,7 @@ Tapis::~Tapis() {
 	tas.clear();
 }
 
-Carte* Tapis::plusGrande(){
+Carte* Tapis::getGagnante(){
 	return gagnante;
 }
 
@@ -17,9 +17,9 @@ void Tapis::recevoirCarte(Carte* c) {
     	demande = c->getCouleur();
 		gagnante = c;
 		notifierObs();
-    } 
+    }
     tas.push_back(c);
-	if((c->getCouleur() == gagnante->getCouleur()) || (c->getCouleur == "Atout") ) && (c->getRang()>gagnante->getRang()) {
+	if( ( (c->getCouleur() == gagnante->getCouleur()) || (c->getCouleur() == "Atout") ) && (c->getRang()>gagnante->getRang()) ) {
 		gagnante = c;
 	}
 }
@@ -69,7 +69,7 @@ void Tapis::setObserver(Joueur* j) {
 }
 void Tapis::notifierObs() {
 	for(itj=observers.begin();itj!=observers.end();++itj) {
-		(*itj)->actualiser(demande);
+		(*itj)->actualiser(demande, gagnante);
 	}
 }
 

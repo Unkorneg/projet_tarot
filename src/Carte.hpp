@@ -7,7 +7,7 @@
 
 using namespace std;
 
-class ComportementPoints;
+//class ComportementPoints;
 class Joueur;
 class Carte
 {
@@ -22,7 +22,7 @@ public:
 	void setPoints(double pts);
 	void setRang(int rg);
 	Joueur* getProprio();
-	void setProprio(Joueur prop);
+	void setProprio(Joueur* prop);
 	string getNom() ;
 
 	bool estBout();

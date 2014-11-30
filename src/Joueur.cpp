@@ -108,17 +108,33 @@ void Joueur::gagnerPli(vector<Carte*> gain) {
 	pli = gain;
 }
 
+
 double Joueur::compterPoints() {
 	points = -3*(compPts->compterPoints(pli, mise));
 }
 
 void Joueur::afficherMisePossible(int miseMax) {
-	string tabMises {"Passe";"Prend";"Garde";"Garde Sans";"Garde Contre"};
-	cout << "0. " << tabMise[0];
+	string tabMises[] = {"Passe","Prend","Garde","Garde Sans","Garde Contre"};
+	cout << "0. " << tabMises[0];
 	for(int i=miseMax+1; i<5; i++) {
-		cout << tabMise[i] << endl;
+		cout << tabMises[i] << endl;
 	}
 }
+
+string Joueur::getNom() {
+    return nom;
+}
+
+// Abstract class Observer
+
+void Joueur::actualiser(string d, Carte* g) {
+	demande = d;
+}
+
+void Joueur::setTapis(Tapis* t) {
+	tapis = t;
+}
+
 
 /*
 int main() {

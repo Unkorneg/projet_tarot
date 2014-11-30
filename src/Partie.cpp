@@ -3,5 +3,5 @@
 #include <cstdlib>
 
 int main() {
-	FacadePartie partie = new FacadePartie();
+	FacadePartie* partie = new FacadePartie();
 }

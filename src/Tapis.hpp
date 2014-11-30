@@ -6,7 +6,7 @@
 #include <string>
 
 #include "Carte.hpp"
-#include "Joueur.hpp"
+//#include "Joueur.hpp"
 
 using namespace std;
 class Carte;

@@ -21,7 +21,7 @@ FacadePartie::FacadePartie() {
 
 	int i = 0;
     int rg=1;
-	
+
 	// Création des cartes couleurs
 	for (int coul=0; coul<4; coul++)
 	{
@@ -37,7 +37,7 @@ FacadePartie::FacadePartie() {
 	}
 
 	i = 0;
-	
+
 	// Création des cartes d'atout
 	for(int att = 0; att< 22; ++att) {
 		cout << "Carte " << rg << endl;
@@ -46,13 +46,13 @@ FacadePartie::FacadePartie() {
 		++rg;
 		paquet.push_back(carte);
 	}
-	
+
 	Joueur* jo;
-	
+
 	// Création des 4 joueur
 	for(int n=0; n<4; ++n) {
 		jo = new Joueur();
-		jo->setTapis(tapis)
+		jo->setTapis(tapis);
 		participants.push_back(jo);
 	}
 }
@@ -62,7 +62,7 @@ void FacadePartie::distribuerCartes() {
 	for(int j=0; j<4; ++j) {
 		for (int i=0; i<18; ++i){
 			int ind = rand()%gMax;
-			participants[j].ajouterCarte(paquet[ind]);
+			participants[j]->ajouterCarte(paquet[ind]);
 			gMax -= 1;
 		}
 	}
@@ -72,10 +72,11 @@ void FacadePartie::distribuerCartes() {
 	}
 }
 
-void annoncerMise() {
+void FacadePartie::annoncerMise() {
 	for(Joueur* j : participants) {
 		cout << j->getNom() << ", que voulez-vous faire ?" << endl;
 		j->afficherMisePossible(miseMax);
+		int mise;
 		cin >> mise;
 		miseMax = mise;
 		system("cls");
@@ -87,7 +88,7 @@ void FacadePartie::ajouterJoueur(string nom) {
 }
 
 void FacadePartie::donnerChien() {
-	
+
 	cout << "Le chien contient : " << endl;
 	tapis->afficherChien();
 	vector<Carte*> chien = tapis->donnerChien();
@@ -119,12 +120,12 @@ void FacadePartie::constituerChien() {
 
 void FacadePartie::jouer(int num) {
 	Carte* c;
-	participants[num].afficherPossibilites();
+	participants[num]->afficherPossibilites();
 	int choix;
 	cout << "Quelle carte voulez-vous jouer ? (Indiquez son numéro) : ";
 	cin >> choix;
 	cout << endl;
-	c = (participants[num].jouerCarte(choix));
+	c = (participants[num]->jouerCarte(choix));
 	if (c->getValeur()=="Excuse") {
 		excuseJouee = true;
 	}

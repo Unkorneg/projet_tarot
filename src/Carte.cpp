@@ -65,8 +65,8 @@ void Carte::setCouleur(string col) {
 	couleur = col;
 }
 
-void Carte::setProprio(Joueur jo) {
-	proprietaire = &jo;
+void Carte::setProprio(Joueur* jo) {
+	proprietaire = jo;
 }
 
 Joueur* Carte::getProprio() {
